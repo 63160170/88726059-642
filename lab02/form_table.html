@@ -6,26 +6,62 @@
         <title>Form demo</title>
     </head>
     <body>
-        <div class="container">
-            <h3>Form Demo</h3>
-            <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/642/88726059/services/post.php">
-                <div class="row">
-                    <div class="col-25">
-                        <label for="name">ชื่อ-นามสกุล:</label>
-                    </div>
-                    <div class="col-105">
-                        <input type="text" name="name" id="name">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-25">
-                        <label for="passwd">รหัสผ่าน:</label>
-                    </div>
-                    <div class="col-75">
-                        <input type="password" name="passwd" id="passwd">
-                    </div>
-                </div>
-            </form>
-        </div>
+        <table>
+            <tr>
+                <td><h3>Form Demo</h3></td>
+                <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/642/88726059/services/post.php">
+                    <tr>
+                        <td>
+                            <label for="name">ชื่อ-นามสกุล:</label>
+                            <input type="text" name="name" id="name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="passwd">รหัสผ่าน:</label>
+                            <input type="password" name="passwd" id="passwd">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="sex">เพศ:</label>
+                            <input type="radio" name="sex" id="sex" value="M">ชาย
+                            <input type="radio" name="sex" id="sex" value="F">หญิง
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="choice">งานอดิเรก:</label>
+                            <input type="checkbox" name="choice1" id="choice1" value="1">ดูหนัง
+                            <input type="checkbox" name="choice2" id="choice2" value="2">ฟังเพลง
+                            <input type="checkbox" name="choice3" id="choice3" value="3">เล่นเกม
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="emotion">ความรู้สึกตอนนี้:</label>
+                            <select name="emotion">
+                                <option value="0">--Select one--</option>
+                                <option value="1">Happy</option>                           
+                                <option value="2">Sad</option>                            
+                                <option value="3">Fun</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ข้อเสนอแนะ:
+                            <Textarea name="commmet" id="comment" rows="5" cols="50"></Textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="Send">
+                            <input type="reset" value="Clear">
+                        </td>
+                    </tr>
+                </form>
+            </tr>
+        </table>
     </body>
 </html>
