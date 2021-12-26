@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form demo</title>
+        <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><h1>Hotel Booking</h1>
+                    <form method="POST" action="https://angsila.cs.buu.ac.th/~wittawas/642/88726059/services/post.php">
+                        <tr>                      
+                            <td>                           
+                                <label for="roomtype">Room Type</label>                        
+                            </td>                       
+                            <td>                          
+                                <select style="width:99%" name="roomtype">                               
+                                    <option value="0">Please Select</option>                                
+                                    <option value="Standard">Standard</option>                                                         
+                                    <option value="Luxury">Luxury</option>                                                          
+                                    <option value="Deluxe">Deluxe</option>                       
+                                </select>                        
+                            </td>                    
+                        </tr>
+                        <tr>                      
+                            <td>                           
+                                <label for="numguest">Number of Guests</label>                        
+                            </td>                       
+                            <td>                          
+                                <select style="width:99%" name="numguest">                               
+                                    <option value="0">Please Select</option>                                
+                                    <option value="1-2">1-2</option>                                                         
+                                    <option value="3-4">3-4</option>                                                          
+                                    <option value="5-6">5-6</option>     
+                                    <option value="7-8">7-8</option>                 
+                                </select>                        
+                            </td>                    
+                        </tr>
+                        <tr>
+                            <td>                           
+                                <label for="name">Name</label>                        
+                            </td>
+                            <td>
+                                <input style="width: 47%" type="text" placeholder="First" name="fname" id="fname">
+                                <input style="width: 47%" type="text" name="lname" id="lname" placeholder="Last">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>                           
+                                <label for="email">Email</label>                        
+                            </td>
+                            <td>
+                                <input style="width:97%" type="email" name="email" id="email" placeholder="john@company.com">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>                           
+                                <label for="arrival">Arrival</label>                        
+                            </td>
+                            <td>
+                                <input type="text" name="arrivaldate" id="arrivaldate" placeholder="MM / DD / YYYY" onfocus="(this.type='date')">
+                                <input type="text" name="arrivaltime" id="arrivaltime" placeholder="HH:MM" onfocus="(this.type='time')">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>                           
+                                <label for="departure">Departure</label>                        
+                            </td>
+                            <td>
+                                <input type="text" name="departuredate" id="departuredate" placeholder="MM / DD / YYYY" onfocus="(this.type='date')">
+                                <input type="text" name="departuretime" id="departuretime" placeholder="HH:MM" onfocus="(this.type='time')">
+                            </td>
+                        </tr>
+                        <tr>                        
+                            <td>                            
+                                <label for="pickup">Free Pickup</label>
+                            </td>
+                            <td>
+                                <input type="radio" name="pickup" id="pickup" value="Yes">Yes, Sure!<br>
+                                <input type="radio" name="pickup" id="pickup" value="No">No, I already rented a car.
+                            </td>                    
+                        </tr>
+                        <tr>
+                            <td>                           
+                                <label for="flightnum">Flight Number</label>                        
+                            </td>
+                            <td>
+                                <input style="width:98%" type="text" name="flightnum" id="flightnum" placeholder="C1209">
+                            </td>
+                        </tr>
+                        <tr>                      
+                            <td>                          
+                                Other requests                      
+                            </td>                       
+                            <td>                            
+                                <Textarea name="commmet" id="comment" rows="5" cols="50"></Textarea>                        
+                            </td>               
+                        </tr>                  
+                        <tr>                       
+                            <td> 
+                                <td>
+                                    <input type="submit" value="Complete Reservation">          
+                                </td>
+                            </td>               
+                        </tr>        
+                    </form>
+                </td>   
+            </tr>
+        </table>
+    </body>
+</html>
