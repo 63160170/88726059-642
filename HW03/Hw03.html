@@ -19,12 +19,12 @@
             padding-left: 3px;
             padding-right: 3px;
         }
-        .green{
-            background-color: green;
-            color: white;
-        }
         .red{
             background-color: red;
+            color: white;
+        }
+        .green{
+            background-color: green;
             color: white;
         }
         .yellow{
@@ -33,6 +33,34 @@
         }
     </style>
     <script>
-        
+        rndWord = words[Math.floor(Math.random)*words.length];
+        document.write(rndWord);
+        numGuess = 6;
+        num = 1;
+
+        function doGuess(){
+            numCorrect = 0;
+            hist = document.getElementById("hist");
+            elmGuessWord = elmGuessWord.value;
+            S = "<div>";
+
+            for(i=0; i<guessWord.length; i++){
+                if(rndWord.indexOf(guessWord[i])<0){
+                    S += "<span class='red'>" + guessWord[i] + "</span>";
+                }else if(guessWord[i] == rndWord[i]){
+                    S += "<span class='green'>" + guessWord[i] + "</span>";
+                    numCorrect++;
+                }else{
+                    S += "<span class='yellow'>" + guessWord[i] + "</span>";
+                }
+            }
+
+            S += "</div>";
+            hist.innerHTML += S;
+            num++;
+            elmGuessWord.select();
+            if(numCorrect == 5) hist.innerHTML += "Win!!!";
+            if(num > 6 && numCorrect != 5) hist.innerHTML += "Game Over!!!";
+        }
     </script>
 </html>
