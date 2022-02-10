@@ -5,19 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Wordle</title>
     </head>
-    <body>
-        <h1>Wordle</h1>
-    <input type="text" id="word" maxlength="5">
-    <input type="button" value="Guess" onclick="guess()">
-    <div id="hist"></div>
-    </body>
     <style>
         body{
             font-family: 'Courier New', Courier, monospace;
         }
         span{
-            padding-left: 3px;
-            padding-right: 3px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
         .red{
             background-color: red;
@@ -29,11 +23,14 @@
         }
         .yellow{
             background-color: yellow;
-            color: white;
+            color: black;
         }
     </style>
     <script>
-        rndWord = words[Math.floor(Math.random)*words.length];
+        words = ["abaci", "baboo", "cabie", "daddy", "eagie", "faced", "gaffe", "hacks",
+        "ichor", "jaded", "label", "mache", "nabob", "oared", "pacer", "qadis", "rabid", 
+        "sabin", "tabla", "ulama", "vague", "weddy", "xenia", "yacks", "zambo"];
+        rndWord = words[Math.floor(Math.random() * words.length)];
         document.write(rndWord);
         numGuess = 6;
         num = 1;
@@ -41,26 +38,31 @@
         function doGuess(){
             numCorrect = 0;
             hist = document.getElementById("hist");
-            elmGuessWord = elmGuessWord.value;
-            S = "<div>";
+            elmGuessWord = document.getElementById("guestWord")
+            guestWord = elmGuessWord.value;
+            s = "<div>";
 
-            for(i=0; i<guessWord.length; i++){
-                if(rndWord.indexOf(guessWord[i])<0){
-                    S += "<span class='red'>" + guessWord[i] + "</span>";
-                }else if(guessWord[i] == rndWord[i]){
-                    S += "<span class='green'>" + guessWord[i] + "</span>";
-                    numCorrect++;
+            for(i=0; i<guestWord.length; i++){
+                if(rndWord.indexOf(guestWord[i])<0){
+                    s += "<span class='red'>" + guestWord[i] + "</span>";
+                }else if(guestWord[i] == rndWord[i]){
+                    s += "<span class='green'>" + guestWord[i] + "</span>";
                 }else{
-                    S += "<span class='yellow'>" + guessWord[i] + "</span>";
+                    s += "<span class='yellow'>" + guestWord[i] +"</span>";
                 }
             }
-
-            S += "</div>";
-            hist.innerHTML += S;
+            s += "</div>";
+            hist.innerHTML +=s;
             num++;
             elmGuessWord.select();
-            if(numCorrect == 5) hist.innerHTML += "Win!!!";
-            if(num > 6 && numCorrect != 5) hist.innerHTML += "Game Over!!!";
+            if(numCorrect == 5)hist.innerHTML +="Win!!!";
+            if(num>6 && numCorrect != 5)hist.innerHTML +="Game Over";
         }
     </script>
+    <body>
+        <h1>Wordle</h1>
+        <input type="text" id="guestWord" maxlength="5"><button onclick="doGuess()">Guess</button>
+        <div id="hist"></div> 
+    </body>
+    
 </html>
